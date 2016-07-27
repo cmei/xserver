@@ -800,6 +800,7 @@ XCMISCPROTO="xcmiscproto >= 1.2.0"
 BIGREQSPROTO="bigreqsproto >= 1.1.0"
 XTRANS="xtrans >= 1.3.5"
 PRESENTPROTO="presentproto >= 1.0"
+VMGLPROTO="vmglproto"
 
 dnl List of libraries that require a specific version
 LIBAPPLEWM="applewm >= 1.4"

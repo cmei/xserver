@@ -9,7 +9,8 @@ module_LTLIBRARIES = libfb.la \
                      libshadow.la
 
 extsmoduledir = $(moduledir)/extensions
-extsmodule_LTLIBRARIES = $(GLXMODS)
+extsmodule_LTLIBRARIES = libvmglext.la \
+						 $(GLXMODS)
 
 AM_CFLAGS = @XORG_CFLAGS@ @DIX_CFLAGS@
 AM_CPPFLAGS = @XORG_INCS@ \
@@ -36,6 +37,9 @@ libglx_la_LIBADD += $(LIBDRM_LIBS) $(PIXMAN_LIBS)
 endif
 endif
 libglx_la_SOURCES = glxmodule.c
+
+libvmglext_la_LDFLAGS = -avoid-version
+libvmglext_la_SOURCES = vmglmod.c VMGLExtension.c
 
 libshadow_la_LDFLAGS = -module -avoid-version $(LD_NO_UNDEFINED_FLAG)
 libshadow_la_LIBADD = $(top_builddir)/miext/shadow/libshadow.la
